@@ -1,0 +1,63 @@
+<div class="row">
+<div class="col-md-3">
+  <p class="lead"><%= link_to "CATEGORIES:", categories_path %></p>
+  <%= render 'categories/list' %>
+  
+</div>
+<div class="col-md-9">
+  <div class="row carousel-holder">
+    <div class="col-md-12">
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+          <li data-target="#myCarousel" data-slide-to="4"></li>
+          <li data-target="#myCarousel" data-slide-to="5"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="item active">
+            <%= image_tag("468x245_banner.png", size: "800x300", alt: "10% off") %>
+          </div>
+          <div class="item">
+            <%= image_tag("CategoryPage_Content_EMS_JewelleryShop.jpg", size: "800x300", alt: "Pendants") %>                        
+          </div>
+          <div class="item">
+            <%= image_tag("sell_jewellery_online.jpg", size: "800x300", alt: "sell your jewellery") %>                        
+          </div>
+          <div class="item">
+            <%= image_tag("img_cat.jpg", size: "800x300", alt: "necklaces") %>                        
+          </div>
+          <div class="item">
+            <%= image_tag("tumblr_static_rkr-2.jpg", size: "800x300", alt: "necklaces") %>                       
+          </div>
+          <div class="item">
+            <%= image_tag("c48.png.jpeg", size: "800x300", alt: "necklaces") %>                       
+          </div>
+          <div class="item">
+            <%= image_tag("Bangle-banner.jpg", size: "800x300", alt: "bangles") %>                       
+          </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h1>
+      Welcome to our website
+    </h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+  </div>
+  <%= image_tag("PP-Banner-940x250.jpg", size: "800x300", alt: "necklaces",  class: "img-responsive") %>
+  <%= image_tag("earrings.jpg", size: "800x300", alt: "earrings",  class: "img-responsive") %>
+</div>
+</div>

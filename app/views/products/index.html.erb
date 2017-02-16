@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<h1>Jewellery Collections:</h1>
+<div class="digg_pagination">
+  <div class="page_info">
+    <%= page_entries_info @products %>
+  </div>
+  <%= will_paginate @products, :container => false %>
+</div>
+<br>
+<br>
+<% @products.in_groups_of(4, false).each do |group| %>
+<div class='row'>
+  <% group.each do |product| %>
+  <div class='col-sm-3'>
+    <div class="well well-lg">
+      <%= image_tag(product.photo.url(:medium), class: "img-responsive") %>
+      <div class="product-title"><%= link_to product.title, product %></div>
+      <div class="product-body"><%= truncate(product.description, length:100) %></div>
+      <div><%= number_to_currency(product.price, :unit => 'INR ') %></div>
+      <div class="product-actions">
+        <% if (admin_signed_in?) %> 
+        <%= link_to 'Edit this item', edit_product_path(product), class:"btn  btn-xs btn-primary" %>
+        <%= link_to 'Delete this item', product_path(product), method: :delete, data: { confirm: "Are you sure you want to delete the item?"}, class: "btn btn-xs btn-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<% end %>
+<br>
+<br>
+<div class="digg_pagination">
+  <div class="page_info">
+    <%= page_entries_info @products %>
+  </div>
+  <%= will_paginate @products, :container => false %>
+</div>
+
+

@@ -1,0 +1,31 @@
+<div class="container">
+  <h2 align="center">Title: <%= @product.title %></h2>
+  <div class="well col-xs-8 col-xs-offset-2"">
+    <h4 class="center"><strong>Description:</strong></h4>
+    <%= simple_format(@product.description) %>
+    <br>
+    <p class="center">
+    <strong>Price:</strong>
+    <%= number_to_currency(@product.price, :unit => 'INR ') %>
+    </p>
+    <p class="center">
+    <strong>Category:</strong>
+    <%= link_to Category.find(@product.category_id).name, category_path(@product.category_id) %>
+    </p>
+    <%= image_tag @product.photo.url(:large), class: "img-responsive" %>
+    <% if (user_signed_in? || admin_signed_in?) %>
+    <%= social_share_button_tag(@product.title) %>
+    <% end %>
+    <div class="product-actions">
+      <% if (admin_signed_in?) %>
+      <%= link_to 'Edit this item', edit_product_path(@product), class:"btn  btn-xs btn-primary" %>
+      <%= link_to 'Delete this item', product_path(@product), method: :delete, data: { confirm: "Are you sure you want to delete the item?"}, class: "btn btn-xs btn-success" %>
+      <% end %>
+      <%= link_to 'View all Jewellery Items', products_path, class:"btn btn-xs btn-success" %>
+      <%= button_to 'Add to Cart', line_items_path(product_id: @product) %>
+    </div>
+  </div>
+</div>
+
+ 
+

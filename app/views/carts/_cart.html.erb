@@ -1,0 +1,18 @@
+<h1>Your Wishlist</h1>
+<% unless cart.line_items.empty? %>
+  <table>
+    <tr>
+      <th>Quantity</th>
+      <th>Jewellery Item</th>
+      <th>Price</th>
+    </tr>
+<%= render(cart.line_items) %>
+<tr>
+<td colspan="2">Total</td>
+<td><%= number_to_currency(cart.total_price, :unit => 'INR ') %></td>
+</tr>
+</table>
+<%= button_to "Checkout", new_order_path, method: :get %>
+<%= button_to 'Empty Wishlist', cart, method: :delete,
+confirm: 'Are you sure?' %>
+<% end %>

@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20170213034739_change_column_null.rb

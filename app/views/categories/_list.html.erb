@@ -1,0 +1,7 @@
+<% Category.all.each do |category| %>
+<div class="list-group">
+  <%= link_to category.name, category, class: "list-group-item" %>
+</div>
+<% end %>
+
+

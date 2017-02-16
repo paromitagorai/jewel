@@ -1,0 +1,27 @@
+<h1>Order details:</h1>
+<p>
+  <strong>Name:</strong>
+  <%= @order.name %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @order.address %>
+</p>
+<p>
+  <strong>email:</strong>
+  <%= @order.email %>
+</p>
+<p>
+  <strong>Mobile:</strong>
+  <%= @order.mobile %>
+</p>
+<table>
+<tr>
+  <th>Quantity</th>
+  <th>Jewellery Item</th>
+  <th>Price</th>
+</tr>
+</table>
+<%= render @order.line_items %>
+
+

@@ -1,0 +1,32 @@
+// Place all the styles related to the categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+h1 {
+    padding: 15px;
+    color: #08088A;
+    text-align: center;
+}
+table {
+    width: 100%;
+}
+th {
+    height: 50px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}
+th,
+td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px;
+}
+ul li {
+    list-style: none;
+    text-align: left;
+}
+tr:hover {
+    background-color: #f5f5f5
+}
