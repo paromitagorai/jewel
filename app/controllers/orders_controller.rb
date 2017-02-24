@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-   
+  before_action :authenticate_user!, except: [:index, :show] 
   # GET /orders
   # GET /orders.json
   def index

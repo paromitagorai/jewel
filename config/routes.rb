@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :admins
+  
   resources :products
   resources :categories
   resources :orders

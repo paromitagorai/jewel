@@ -14,7 +14,6 @@
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "About", home_about_path %></li>
         <li><%= link_to "Jewellery Collections", products_path %></li>
-        <% if admin_signed_in? %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -22,27 +21,10 @@
             <li><%= link_to "Add a new jewellery Item", new_product_path %></li>
             <li><%= link_to "Add a new category", new_category_path %></li>
             <li><%= link_to "In our categories", categories_path %></li>
-          <% end %>
-          
           </ul>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <% if user_signed_in? %>
+       </ul>
+       <ul class="nav navbar-nav navbar-right">
         <li><%= link_to "WISHLIST", home_cart_path %></li>
-        <% end %>
-        <% if admin_signed_in? %>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-          <%= current_admin.email %> <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li role="separator" class="divider"></li>
-            <li><%= link_to "<i class='glyphicon glyphicon-log-out'></i>&nbsp; Sign Out".html_safe, destroy_admin_session_path, method: "Delete" %></li>
-          </ul>
-        </li>
-        <% else %>
-        <li><%= link_to "Admin Users", new_admin_session_path %></li>
-        <% end %>
         <% if user_signed_in? %>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -51,11 +33,10 @@
           <ul class="dropdown-menu">
             <li role="separator" class="divider"></li>
             <li><%= link_to "<i class='glyphicon glyphicon-log-out'></i>&nbsp; Sign Out".html_safe, destroy_user_session_path, method: "Delete" %></li>
-<% else %>
-        <li><%= link_to "Users Login", new_user_session_path %></li>
+        <% else %>
+          <li><%= link_to "Admin area", new_user_session_path %></li>
         <% end %>
-
-          </ul>
+        </ul>
         </li>
       </ul>
     </div>

@@ -4,7 +4,7 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Dear <%= @order.name %>,</h1>
+    Dear <%= @order.name %>,
     <p>
       Thank you for your recent order from Online Jewellery Store
     </p>
@@ -12,5 +12,7 @@
       You ordered the following items:
     </p>
     <p><%= render @order.line_items %></p>
+    <p>Do visit again,</p>
+    <b>Online Jewellery Store</b>
   </body>
 </html>
