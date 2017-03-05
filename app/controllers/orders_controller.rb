@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifier.received(@order).deliver
-        redirect_to leads_index_url, notice: 'Thank you for your order!'
+        redirect_to @order, notice: 'Thank you for your order!'
       else
         @cart = current_cart
         render action: "new" 
