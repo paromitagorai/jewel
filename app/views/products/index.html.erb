@@ -22,6 +22,10 @@
         <%= link_to 'Edit this item', edit_product_path(product), class:"btn  btn-xs btn-primary" %>
         <%= link_to 'Delete this item', product_path(product), method: :delete, data: { confirm: "Are you sure you want to delete the item?"}, class: "btn btn-xs btn-success" %>
         <% end %>
+        <% unless user_signed_in? %>
+        <%= button_to 'Add to Wishlist', line_items_path(product_id: product) %>
+        <%= social_share_button_tag(product.title) %>
+        <% end %>
       </div>
     </div>
   </div>

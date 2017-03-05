@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show] 
+ 
   # GET /orders
   # GET /orders.json
   def index
@@ -37,7 +37,7 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifier.received(@order).deliver
-        redirect_to @order, notice: 'Thank you for your order!'
+        redirect_to leads_index_url, notice: 'Thank you for your order!'
       else
         @cart = current_cart
         render action: "new" 
